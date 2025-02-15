@@ -1,25 +1,21 @@
-import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
-const prisma = new PrismaClient();
+let adminUser = null; // Store admin details in memory
 
 export async function POST(req) {
   try {
     const { email, password } = await req.json();
 
-    // Check if the user already exists
-    const existingUser = await prisma.user.findUnique({ where: { email } });
-    if (existingUser) {
+    // Check if the admin user is already registered
+    if (adminUser) {
       return new Response(JSON.stringify({ message: "User already exists" }), { status: 400 });
     }
 
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create user
-    const user = await prisma.user.create({
-      data: { email, password: hashedPassword },
-    });
+    // Save user (in memory)
+    adminUser = { email, password: hashedPassword };
 
     return new Response(JSON.stringify({ message: "User created successfully" }), { status: 201 });
   } catch (error) {
