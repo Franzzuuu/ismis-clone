@@ -1,37 +1,28 @@
+import Link from "next/link";
+
 export default function Sidebar() {
   return (
-    <div className="flex h-screen bg-white">
-      {/* Sidebar */}
-      <aside className="w-64 bg-green-900 text-white flex flex-col items-center p-6">
-        {/* Logo */}
-        <img src="/logo.png" alt="Logo" className="w-32 h-auto mb-6" />
+    <div className="w-64 min-h-screen bg-green-900 text-white flex flex-col p-4">
+      {/* Logo */}
+      <div className="flex justify-center mb-6">
+        <img src="/logo.png" alt="Logo" className="h-16" />
+      </div>
 
-        {/* Navigation */}
-        <nav className="w-full">
-          <ul className="space-y-2">
-            <li>
-              <a href="#" className="block p-3 rounded-md hover:bg-olive-600">
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" className="block p-3 rounded-md hover:bg-olive-600">
-                Settings
-              </a>
-            </li>
-            <li>
-              <a href="#" className="block p-3 rounded-md hover:bg-olive-600">
-                Logout
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-      {/* Main Content Area */}
-      <main className="flex-1 p-6">
-        <h1 className="text-2xl font-bold text-black">Welcome to the Dashboard</h1>
-      </main>
+      {/* Navigation Links */}
+      <nav className="flex flex-col gap-4">
+        <Link href="/dashboard">
+          <span className="p-3 bg-green-500 rounded-lg hover:bg-olive-500 cursor-pointer">Dashboard</span>
+        </Link>
+        <Link href="/profile">
+          <span className="p-3 bg-green-500 rounded-lg hover:bg-olive-500 cursor-pointer">Profile</span>
+        </Link>
+        <Link href="/settings">
+          <span className="p-3 bg-green-500 rounded-lg hover:bg-olive-500 cursor-pointer">Settings</span>
+        </Link>
+        <Link href="/logout">
+          <span className="p-3 bg-red-900 rounded-lg hover:bg-red-800 cursor-pointer">Logout</span>
+        </Link>
+      </nav>
     </div>
   );
 }
