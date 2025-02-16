@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-const SECRET = "your-secret-key"; // Change this in production!
+const SECRET = "KJHD83JHKH8932KJHSD83JHJKH8923JK"; 
 
 // Hardcoded admin credentials
 const adminUser = {
