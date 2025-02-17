@@ -11,16 +11,16 @@ export default function Sidebar() {
       {/* Navigation Links */}
       <nav className="flex flex-col gap-4">
         <Link href="/dashboard">
-          <span className="p-3 bg-green-500 rounded-lg hover:bg-olive-500 cursor-pointer">Dashboard</span>
+          <span className="p-3 bg-green-900 rounded-lg hover:bg-green-700 cursor-pointer">Dashboard</span>
         </Link>
         <Link href="/profile">
-          <span className="p-3 bg-green-500 rounded-lg hover:bg-olive-500 cursor-pointer">Profile</span>
+          <span className="p-3 bg-green-900 rounded-lg hover:bg-green-700 cursor-pointer">Profile</span>
         </Link>
         <Link href="/settings">
-          <span className="p-3 bg-green-500 rounded-lg hover:bg-olive-500 cursor-pointer">Settings</span>
+          <span className="p-3 bg-green-900 rounded-lg hover:bg-green-700 cursor-pointer">Settings</span>
         </Link>
         <Link href="/logout">
-          <span className="p-3 bg-red-900 rounded-lg hover:bg-red-800 cursor-pointer">Logout</span>
+          <span className="p-3 bg-red-900 rounded-lg hover:bg-red-600 cursor-pointer">Logout</span>
         </Link>
       </nav>
     </div>
