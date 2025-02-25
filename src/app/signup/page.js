@@ -28,7 +28,7 @@ export default function SignupPage() {
         {/* Logo Placeholder */}
         <div className="mb-6">
           <img
-            src="/logo.png" // Replace with your actual logo
+            src="/logo.png"
             alt="Logo"
             className="w-full h-32 object-contain"
           />
